@@ -22,3 +22,4 @@ export function hasDied(user) {
         }, 3000);
     }
 }
+

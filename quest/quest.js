@@ -57,7 +57,7 @@ formEl.addEventListener('submit', (event) => {
     hasDied(user);
     setTimeout(() => {
         window.location.href = '../map';
-    }, 5000);
+    }, 4000);
 
 });
 
