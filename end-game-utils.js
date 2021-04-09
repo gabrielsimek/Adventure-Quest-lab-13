@@ -6,10 +6,10 @@ export function hasCompleted(user, quests) {
     for (let quest of quests){
         if (user.completed[quest.id])
             completedQuests += 1;
-            console.log(completedQuests);
+           
     }
 
     if (completedQuests === quests.length) {
-        console.log('yawin');
+        return true;
     }
 }

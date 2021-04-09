@@ -1,6 +1,8 @@
 import questData from '../quest-data.js';
 import { hasCompleted } from '../end-game-utils.js';
 import { getUser, setUser } from '../local-storage-utils.js';
+import { findById } from '../utils.js';
+
 const mapEl = document.querySelector('.main-section');
 
 for (let quest of questData){
@@ -10,13 +12,4 @@ for (let quest of questData){
     mapEl.append(linkEl);
 
 }
-
-const user = getUser();
-
-user.completed.questOne = true;
-user.completed.questTwo = true;
-user.completed.questThree = true;
-// user.completed.questFour = true;
-// setUser(user);
-hasCompleted(user, questData);
 
