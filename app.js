@@ -22,3 +22,4 @@ formEl.addEventListener('submit', (event) => {
     setUser(user);
     window.location.href = './map';
 });
+
