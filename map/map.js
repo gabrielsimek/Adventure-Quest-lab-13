@@ -1,7 +1,7 @@
 import questData from '../quest-data.js';
 import { hasCompleted } from '../end-game-utils.js';
-import { getUser, setUser } from '../local-storage-utils.js';
-import { findById } from '../utils.js';
+import { getUser } from '../local-storage-utils.js';
+// import { findById } from '../utils.js';
 import { renderUserStats } from '../dom-render-utils.js';
 
 
