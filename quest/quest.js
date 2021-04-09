@@ -19,6 +19,7 @@ const formEl = document.createElement('form');
 for (let choice of currentQuest.choices) {
     const labelEl = document.createElement('label');
     labelEl.textContent = choice.description;
+
     const inputEl = document.createElement('input');
     inputEl.type = 'radio';
     inputEl.name = 'potential-choice';
@@ -29,5 +30,18 @@ for (let choice of currentQuest.choices) {
     formEl.append(labelEl);
 }
 //append in order 
+const buttonEl = document.createElement('button');
+buttonEl.textContent = 'Play';
+formEl.append(buttonEl);
 
 sectionEl.append(titleEl, imageEl, formEl);
+
+formEl.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(formEl);
+    const selectedChoiceId = formData.get('potential-choice');
+    //get 'choice' and value is returned...
+    console.log(selectedChoiceId);
+
+});
+
