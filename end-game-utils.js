@@ -13,3 +13,12 @@ export function hasCompleted(user, quests) {
         return true;
     }
 }
+
+export function hasDied(user) {
+    if (user.hp <= 0) {
+        alert('You died!');
+        setTimeout(() => {
+            window.location.href = '../result';
+        }, 3000);
+    }
+}

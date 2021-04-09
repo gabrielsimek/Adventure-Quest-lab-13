@@ -1,5 +1,11 @@
+import { hasDied } from '../end-game-utils.js';
+import { getUser } from '../local-storage-utils.js';
+import { applyUserChoice } from '../game-play-utils.js';
 import questData from '../quest-data.js';
 import { findById } from '../utils.js';
+import { renderUserStats } from '../dom-render-utils.js';
+
+renderUserStats();
 
 const param = new URLSearchParams(window.location.search);
 
@@ -33,15 +39,25 @@ for (let choice of currentQuest.choices) {
 const buttonEl = document.createElement('button');
 buttonEl.textContent = 'Play';
 formEl.append(buttonEl);
-
-sectionEl.append(titleEl, imageEl, formEl);
+const resultEl = document.createElement('div');
+sectionEl.append(titleEl, imageEl, formEl, resultEl);
 
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(formEl);
     const selectedChoiceId = formData.get('potential-choice');
+    
     //get 'choice' and value is returned...
-    console.log(selectedChoiceId);
+    const userChoice = findById(currentQuest.choices, selectedChoiceId);
+    
+    resultEl.textContent = userChoice.result;
+    applyUserChoice(userChoice, currentQuest);
+    buttonEl.classList.add('hidden');
+    const user = getUser();
+    hasDied(user);
+    setTimeout(() => {
+        window.location.href = '../map';
+    }, 5000);
 
 });
 
