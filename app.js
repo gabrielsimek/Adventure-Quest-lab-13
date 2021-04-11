@@ -1,5 +1,7 @@
 // import functions and grab DOM elements
-import { getUser, setUser } from './local-storage-utils.js'
+import { getUser, setUser } from './local-storage-utils.js';
+import { findById } from './utils.js';
+import { userTypes } from './user-classes.js';
 // initialize state
 
 // set event listeners to update state and DOM
@@ -10,15 +12,18 @@ formEl.addEventListener('submit', (event) => {
 
     const formData = new FormData(formEl);
     const userName = formData.get('name');
-    const userType = formData.get('type');
+    const userTypeName = formData.get('type');
+    const userType = findById(userTypes, userTypeName);
+    
     
     const user = {
         name: userName,
-        type: userType,
-        hp: 40,
-        gold: 0,
+        type: userTypeName,
+        hp: userType.hp,
+        gold: userType.gold,
         completed: {}
     };
+    
     setUser(user);
     window.location.href = './map';
 });

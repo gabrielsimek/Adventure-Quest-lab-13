@@ -6,16 +6,16 @@ export function renderUserStats(){
     const divEl = document.createElement('div');
 
     const nameEl = document.createElement('p');
-    nameEl.textContent = `HP ${user.name}`;
+    nameEl.textContent = `Name ${user.name}`;
 
     const hpEl = document.createElement('p');
-    hpEl.textContent = `HP: ${user.hp}`;
+    hpEl.textContent = `HP ${user.hp}`;
 
     const goldEl = document.createElement('p');
-    goldEl.textContent = `Gold: ${user.gold}`;
+    goldEl.textContent = `Gold ${user.gold}`;
 
     const typeEl = document.createElement('p');
-    typeEl.textContent = `Type: ${user.type}`;
+    typeEl.textContent = `Type ${user.type}`;
 
     divEl.append(nameEl, hpEl, goldEl, typeEl);
 

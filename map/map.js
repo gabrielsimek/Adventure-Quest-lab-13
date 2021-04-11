@@ -30,7 +30,7 @@ for (let quest of questData){
         // linkEl.textContent = 'completed';
         linkEl.classList.add('completed');
         const spanEl = document.createElement('span');
-        spanEl.innerHTML = '&check;';
+        spanEl.innerHTML = ' &check;';
         linkEl.appendChild(spanEl);
 
     }

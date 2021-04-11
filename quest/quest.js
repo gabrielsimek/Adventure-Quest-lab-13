@@ -16,7 +16,8 @@ const currentQuest = findById(questData, questId);
 const sectionEl = document.querySelector('.main-section');
 const titleEl = document.createElement('h1');
 titleEl.textContent = currentQuest.title;
-
+const descriptionEl = document.createElement('div');
+descriptionEl.textContent = currentQuest.description;
 const imageEl = document.createElement('img');
 imageEl.src = `../assets/quests/${currentQuest.image}`;
 
@@ -40,7 +41,7 @@ const buttonEl = document.createElement('button');
 buttonEl.textContent = 'Play';
 formEl.append(buttonEl);
 const resultEl = document.createElement('div');
-sectionEl.append(titleEl, imageEl, formEl, resultEl);
+sectionEl.append(titleEl, descriptionEl, imageEl, formEl, resultEl);
 
 formEl.addEventListener('submit', (event) => {
     event.preventDefault();

@@ -9,4 +9,12 @@ const resultEl = document.createElement('div');
 
 resultEl.textContent = createResultMessage(user);
 
-sectionEl.appendChild(resultEl);
+const buttonEl = document.createElement('button');
+buttonEl.textContent = 'Play Again';
+buttonEl.addEventListener('click', () => {
+    localStorage.removeItem('USER');
+    window.location.href = '../'
+});
+
+sectionEl.append(resultEl, buttonEl);
+
