@@ -11,6 +11,7 @@ import { createResultMessage } from '../result-message.js';
 
 renderUserStats();
 
+
 const mapEl = document.querySelector('.main-section');
 const user = getUser();
 const quests = questData;
@@ -20,10 +21,23 @@ if (hasCompleted(user, quests)){
     window.location.href = '../result';
 }
 
+
 for (let quest of questData){
     const linkEl = document.createElement('a');
     linkEl.href = `../quest/?id=${quest.id}`;
     linkEl.textContent = quest.title;
+    if (user.completed[quest.id]){
+        // linkEl.textContent = 'completed';
+        linkEl.classList.add('completed');
+        const spanEl = document.createElement('span');
+        spanEl.innerHTML = '&check;';
+        linkEl.appendChild(spanEl);
+
+    }
+        
+
+
+    
     mapEl.append(linkEl);
 
 }

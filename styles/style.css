@@ -109,8 +109,14 @@ footer {
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
-
   }
+.completed {
+     text-decoration: line-through;
+     
+     pointer-events: none;;
+}
+
+  
 .hidden {
     display: none;
 }
