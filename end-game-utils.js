@@ -1,5 +1,5 @@
 // import questData from './quest-data.js';
-import { getUser } from './local-storage-utils.js';
+// import { getUser } from './local-storage-utils.js';
 
 // export function hasCompleted(user, quests) {
 //     let completedQuests = 0;
