@@ -3,7 +3,7 @@ const questOne = {
     id: 'questOne',
     title: 'quest One',
     map: {
-        top: '89%',
+        top: '40%',
         left: '44%'
     },
     image: 'monsters.jpg',

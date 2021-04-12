@@ -1,5 +1,7 @@
 import { getUser } from '../local-storage-utils.js';
 import { createResultMessage } from '../result-message.js';
+import { renderUserStats } from '../dom-render-utils.js';
+renderUserStats();
 
 const sectionEl = document.querySelector('.main-section');
 

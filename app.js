@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { getUser, setUser } from './local-storage-utils.js';
+import { setUser } from './local-storage-utils.js';
 import { findById } from './utils.js';
 import { userTypes } from './user-classes.js';
 // initialize state
@@ -18,7 +18,7 @@ formEl.addEventListener('submit', (event) => {
     
     const user = {
         name: userName,
-        type: userTypeName,
+        type: userType.name,
         hp: userType.hp,
         gold: userType.gold,
         completed: {}
