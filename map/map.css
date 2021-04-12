@@ -1,0 +1,24 @@
+
+.completed {
+
+    
+    pointer-events: none;;
+    color: white;
+}
+
+.map {
+    position: relative;
+    background-image: url('../assets/map.jpg'
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90vw;
+    height: calc(90vw * 642 / 900);
+    margin: auto;
+
+}
+
+.quest-links {
+    position: absolute;
+    
+}
