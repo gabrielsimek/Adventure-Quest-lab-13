@@ -15,7 +15,7 @@ const buttonEl = document.createElement('button');
 buttonEl.textContent = 'Play Again';
 buttonEl.addEventListener('click', () => {
     localStorage.removeItem('USER');
-    window.location.href = '../'
+    window.location.href = '../';
 });
 
 sectionEl.append(resultEl, buttonEl);
