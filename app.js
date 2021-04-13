@@ -11,7 +11,10 @@ formEl.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(formEl);
-    const userName = formData.get('name');
+    let userName = formData.get('name');
+    if (userName.toLowerCase() === 'bryana') {
+        userName = 'The best TA!';
+    }
     const userTypeName = formData.get('type');
     const userType = findById(userTypes, userTypeName);
     

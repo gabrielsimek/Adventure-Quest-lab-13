@@ -1,12 +1,7 @@
 import questData from '../quest-data.js';
 import { hasCompleted } from '../end-game-utils.js';
 import { getUser } from '../local-storage-utils.js';
-// import { findById } from '../utils.js';
 import { renderUserStats } from '../dom-render-utils.js';
-// import { createResultMessage } from '../result-message.js';
-
-
-
 
 
 renderUserStats();
@@ -16,7 +11,7 @@ const mapEl = document.querySelector('.map');
 const user = getUser();
 const quests = questData;
 
-// where exactly should i put this function?
+//check hasCompleted before rendering map, if complete not nec to render links
 if (hasCompleted(user, quests)){
     window.location.href = '../result';
 }
@@ -30,7 +25,7 @@ for (let quest of questData){
     linkEl.style.top = quest.map.top;
     linkEl.style.left = quest.map.left;
     if (user.completed[quest.id]){
-        // linkEl.textContent = 'completed';
+        
         linkEl.classList.add('completed');
         const spanEl = document.createElement('span');
         spanEl.innerHTML = ' &check;';

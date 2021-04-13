@@ -34,7 +34,7 @@ export function createResultMessage(user) {
         deadOrAliveGoldMessage = aliveGoldMessages;
     }
     
-    const resultString = `${hpMessages[hpMessage]} ${deadOrAliveGoldMessage[goldMessage]}`;
+    const resultString = `${user.name}, ${hpMessages[hpMessage]} ${deadOrAliveGoldMessage[goldMessage]}`;
     
     return resultString;
 
